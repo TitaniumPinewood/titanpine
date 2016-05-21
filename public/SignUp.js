@@ -14,13 +14,15 @@ class SignUp extends React.Component {
 
 	submitForm(e){
 		e.preventDefault()
+    let username = this.username.value.toLowerCase();
+    console.log(username)
 		if(this.password.value.length >= 5){
 			if(this.password.value === this.confirmPassword.value){
 				if(this.email.value.indexOf("@") > -1 && this.email.value.indexOf(".") > -1){
   					fetch('http://localhost:3001/v1/users/', {
       					method: 'POST',
       					headers: {'Content-Type': 'application/json'},
-      					body: JSON.stringify({username: this.username.value, password: this.password.value, email: this.email.value})
+      					body: JSON.stringify({username: username, password: this.password.value, email: this.email.value})
     				})
     				.then(function(response){
     					if(response.statusText === 'OK'){
