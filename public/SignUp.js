@@ -27,8 +27,7 @@ class SignUp extends React.Component {
     						window.location = '#/createProfile';
     					} else {
     						alert("Either your email or username is already taken please try again")
-    					}
-      					
+    					}		
     				});
     			} else {
     				alert("Please enter a valid email address")

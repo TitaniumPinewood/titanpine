@@ -2,13 +2,16 @@ import React from 'react';
 class SearchBar extends React.Component {
 	render(){
 		return <div>
-				<input ref={(input) => this.search = input} onChange={this.onChange.bind(this)} className='searchbox' />
-    			<button type="submit" className='searchbutton'>Search</button>
+				<input ref={(input) => this.search = input} className='searchbox' />
+    			<button type="submit" onClick={this.onSubmit.bind(this)} className='searchbutton'>Search</button>
     			</div>
 	}
 
-	onChange(e){
-   		console.log('This is working', this.search.value);
+	onSubmit(){
+		var searchable = this.search.value.replace(" ", "+").toLowerCase();;
+		fetch('http://localhost:3001/v1/house_listings/?city=' + searchable)
+    	.then(response => response.json())
+    	.then(json => console.log(json))
 	}
 
 }
