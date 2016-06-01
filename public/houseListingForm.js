@@ -42,7 +42,7 @@ class HousingForm extends React.Component {
 
   submit(e, name, heading, street, city, state, zipCode, price, dateStart, dateEnd, interests, mission, rules, vacancies, primary, amenities, pic1, pic2, pic3, pic4, pic5){
     e.preventDefault();
-  
+
     let geolocation;
     let authToken = window.localStorage.getItem('token');
 
@@ -58,7 +58,7 @@ class HousingForm extends React.Component {
       pic1Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic1.value.slice(12);
       var form = document.getElementById('pic1Form');
       var fdata = new FormData(form);
-      Axios.post('http://localhost:3000/v1/ap', fdata)
+      Axios.post('http://localhost:3000/v1/lp', fdata)
       .then(response => console.log(response));
     }
 
@@ -68,7 +68,7 @@ class HousingForm extends React.Component {
       pic2Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic2.value.slice(12);
       var form = document.getElementById('pic2Form');
       var fdata = new FormData(form);
-      Axios.post('http://localhost:3000/v1/ap', fdata)
+      Axios.post('http://localhost:3000/v1/lp', fdata)
       .then(response => console.log(response));
     }
 
@@ -78,7 +78,7 @@ class HousingForm extends React.Component {
       pic3Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic3.value.slice(12);
       var form = document.getElementById('pic3Form');
       var fdata = new FormData(form);
-      Axios.post('http://localhost:3000/v1/ap', fdata)
+      Axios.post('http://localhost:3000/v1/lp', fdata)
       .then(response => console.log(response));
     }
 
@@ -88,7 +88,7 @@ class HousingForm extends React.Component {
       pic4Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic4.value.slice(12);
       var form = document.getElementById('pic4Form');
       var fdata = new FormData(form);
-      Axios.post('http://localhost:3000/v1/ap', fdata)
+      Axios.post('http://localhost:3000/v1/lp', fdata)
       .then(response => console.log(response));
     }
 
@@ -98,7 +98,7 @@ class HousingForm extends React.Component {
       pic5Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic5.value.slice(12);
       var form = document.getElementById('pic5Form');
       var fdata = new FormData(form);
-      Axios.post('http://localhost:3000/v1/ap', fdata)
+      Axios.post('http://localhost:3000/v1/lp', fdata)
       .then(response => console.log(response));
     }
 
@@ -147,28 +147,28 @@ class HousingForm extends React.Component {
           <form>
             <label>House Name:</label><br/>
               <input type='text'ref={input => this.house_name = input}/><br/>
-            
+
             <label>Heading:</label><br/>
               <input type='text'ref={input => this.heading = input}/><br/>
-            
+
             <label>Street Address:</label><br/>
               <input type='text'ref={input => this.street_add = input}/><br/>
-            
+
             <label>City:</label><br/>
               <input type='text'ref={input => this.city = input}/><br/>
-            
+
             <label>State:</label><br/>
               <input type='text'maxLength='2'ref={input => this.stateName = input}/><br/>
-            
+
             <label>Zipcode:</label><br/>
               <input type='text'pattern="\d*" maxLength='5' min='0'ref={input => this.zipCode = input}/><br/>
-            
+
             <label>Price:</label><br/>
               <input type="number" name="currency" min="0" max="9999" step="0.01" ref={input => this.price = input}/><br/>
-            
+
             <label>Dates Available:</label><br/>
               <input type="date"ref={input => this.dates_start = input}/><input type="date"ref={input => this.dates_end = input}/><br/>
-            
+
             <label>Interests:</label><br/>
               <input type='text'ref={input => this.interests = input}/><br/>
               <div>

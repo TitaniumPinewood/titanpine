@@ -9,7 +9,7 @@ class MyCarousel extends React.Component {
   }
   componentWillMount(){
     let images = [];
-    
+
     if (this.props.listing !== null){
       if(this.props.listing.pic1){
         images.push(this.props.listing.pic1);
@@ -38,13 +38,13 @@ class MyCarousel extends React.Component {
         {this.state.images.map((img, i) => {
           return (
           <CarouselItem key ={i}>
-            <img className='carouselImage' width={700}src={img} />
+            <img className='carouselImage' height={500} width={700} src={img} />
           </CarouselItem>
           )
         })}
       </Carousel>
-        
-       
+
+
     )
   }
 };

@@ -20,16 +20,17 @@ var app = express();
 //serving our index.html
 app.use(express.static(publicPath));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(helmet());
 app.use(multiparty());
 app.use(favicon(__dirname + '/public/assets/black-house.ico'));
-require('./server/middleware.js');
 require('./server/S3ListingsMiddleware.js')(app);
 require('./server/S3AvatarMiddleware.js')(app);
 
 //server/compiler.js runs webpack-dev-server which creates the bundle.js which index.html serves
-//notice that you will not see a physical bundle.js because webpack-dev-server runs it from memory
+//will not see a physical bundle.js because webpack-dev-server runs it from memory
 if (!isProduction) {
     var bundle = require('./server/compiler.js');
     bundle();

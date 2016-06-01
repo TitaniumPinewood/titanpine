@@ -39,7 +39,7 @@ video {
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  font-weight:100; 
+  font-weight:100;
 }
 
 .searchbutton {
@@ -49,7 +49,7 @@ video {
   outline: 0px;
   box-shadow: none;
   border: none;
-  float: top; 
+  float: top;
   vertical-align: top;
   text-decoration: none;
 }
@@ -66,7 +66,7 @@ video {
   outline: 0px;
   box-shadow: none;
   border: none;
-  float: top; 
+  float: top;
   text-align: right;
 }
 
@@ -79,9 +79,9 @@ video {
 
 .logo {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
   color:#43D1AF;
-  font-size: 20px; 
+  font-size: 20px;
   margin-top: 5px;
 }
 
@@ -105,10 +105,10 @@ video {
     width: 100%;
 }
 
-.overlay { 
+.overlay {
   position:absolute;
   z-index:300000;
-  font-weight:100; 
+  font-weight:100;
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
@@ -142,7 +142,7 @@ video {
 .form-style-6 input[type="password"],
 .form-style-6 input[type="url"],
 .form-style-6 textarea,
-.form-style-6 select 
+.form-style-6 select
 {
     -webkit-transition: all 0.30s ease-in-out;
     -moz-transition: all 0.30s ease-in-out;
@@ -187,7 +187,7 @@ video {
     border-bottom: 2px solid #30C29E;
     border-top-style: none;
     border-right-style: none;
-    border-left-style: none;    
+    border-left-style: none;
     color: #333;
 }
 .form-style-6 input[type="submit"]:hover,
@@ -195,12 +195,12 @@ video {
   background: #2EBC99;
 }
 .fileUpload {
-  
+
 }
 .list {
   float:right;
   height: 100vh;
-  width: 35%;
+  width: 40%;
   overflow: scroll;
   background-color: #43D1AF;
   text-decoration: none;
@@ -262,13 +262,9 @@ video {
 .houseInfo {
   float:right;
   height: 100vh;
-  width: 35%;
+  width: 40%;
   overflow: scroll;
   background-color: #43D1AF;
-}
-.carousel {
-  width: 35%;
-  float:right;
 }
 .houseName {
   font-size: 20px;
@@ -298,4 +294,6 @@ video {
 .carouselImage {
   display: block;
   margin: 0 auto;
+  height: 60%;
+  width: 50%;
 }

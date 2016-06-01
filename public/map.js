@@ -1,4 +1,4 @@
-import React from 'react';  
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
@@ -26,7 +26,7 @@ class GMaps extends React.Component {
   render(){
     return (
       <Gmaps
-        width={'65%'}
+        width={'60%'}
         height={'100vh'}
         lat={(this.props.listings.length > 0) ? this.props.listings[0].lat : 37.8780068}
         lng={(this.props.listings.length > 0) ? this.props.listings[0].lng : -122.2695097}
